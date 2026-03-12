@@ -1,0 +1,30 @@
+<div class="container mt-4">
+  <h5>Create Project</h5>
+
+  <input class="form-control mb-2" placeholder="Project name" [(ngModel)]="projectName" />
+
+  <textarea
+    class="form-control mb-2"
+    placeholder="Project description"
+    [(ngModel)]="projectDescription"
+  ></textarea>
+
+  <button class="btn btn-success" (click)="createProject()">Create Project</button>
+
+  <h2 class="mb-4">Projects</h2>
+
+  <div class="row">
+    <div class="col-md-4 mb-3" *ngFor="let project of projects">
+      <div class="card shadow-sm h-100">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">{{ project.name }}</h5>
+          <p class="card-text text-muted mb-4">{{ project.description }}</p>
+          <div class="mt-auto"></div>
+        </div>
+        <div class="card-footer bg-transparent border-0 text-end">
+          <button class="btn btn-primary btn-sm" (click)="openProject(project.id)">Open Project</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,48 @@
+<nav class="navbar navbar-dark bg-dark px-3">
+
+  <span class="navbar-brand">ProjectCollab</span>
+
+  <div class="position-relative">
+
+    <button
+      class="btn btn-outline-light btn-sm me-2"
+      (click)="loadNotifications()">
+
+      🔔
+      <span *ngIf="notificationCount > 0" class="badge bg-danger ms-1">{{ notificationCount }}</span>
+
+    </button>
+
+    <div
+      *ngIf="showNotifications"
+      class="card position-absolute p-2"
+      style="right:0; width:300px; z-index:1000">
+
+      <div *ngIf="notifications.length === 0">
+        No notifications
+      </div>
+
+      <div
+        *ngFor="let n of notifications"
+        class="border-bottom p-2">
+
+        {{ n.content }}
+
+      </div>
+
+    </div>
+
+    <button
+      class="btn btn-outline-light btn-sm"
+      (click)="logout()">
+
+      Logout
+
+    </button>
+
+  </div>
+
+</nav>
+
+<router-outlet></router-outlet>
+
