@@ -1,0 +1,6 @@
+@ProjectCollab.API_HostAddress = http://localhost:5034
+
+GET {{ProjectCollab.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
